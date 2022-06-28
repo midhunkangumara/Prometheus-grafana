@@ -66,5 +66,10 @@
 
 
    * we are monitering prometheus itself
+    * copy uid of prometheus for runing prometeus container
+
+7. running prometheus container
+
+       $  docker run --name myprom -d -p 9090:9090 --user 997:997 --net=host -v /etc/prometheus:/etc/prometheus -v /data/prometheus:/data/prometheus     prom/prometheus --config.file="/etc/prometheus/prometheus.yml" --storage.tsdb.path="data/prometheus"
 
 
